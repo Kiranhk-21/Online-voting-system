@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style_for_forms.css" />
+
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th>registration_Id</th>
+        <th>Candidtate ID</th>
+        <th>Election Id</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="cand : ${candidates_l}">
+        <td th:text="${cand.reg_id}"></td>
+        <td th:text="${cand.cid}"></td>
+        <td th:text="${cand.eid}"></td>
+    </tr>
+    </tbody>
+</table>
+<button type="submit" onclick="window.location.href = 'http://localhost:8080/voter'">Voter Page</button>
+</body>
+</html>

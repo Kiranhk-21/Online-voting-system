@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style_for_forms.css" />
+    </head>
+    <body>
+
+        <h2 th:text="${candidate_d.name}"></h2><br>
+        <h2 th:number="${candidate_d.userId}"></h2><br>
+        <h2 th:text="${candidate_d.cid}"></h2><br>
+
+        <h2>_______________________________________________________________</h2><br>
+        <form action="/candidate/view_elections" method="post">
+            <input id = "ve" type="hidden">
+            <button id="view_elections" >All Elections</button>
+        </form>
+
+        <form action = "/candidate/reg_for_election" method="post">
+            <label for="eid" >Enter the Election Id:</label>
+            <input id = "eid" name = "eid" type = "number">
+
+            <button type="submit" >Register for Election</button>
+        </form>
+
+        <button id = "logout" onclick="window.location.href = 'http://localhost:8080/'">Log-out</button>
+    </body>
+</html>

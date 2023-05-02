@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style_for_forms.css" />
+
+    </head>
+    <body>
+        <h3>Voter Name :</h3><h3 th:text="${voter_d.name}"></h3>
+        <h3> Voter's userId</h3><h3 th:text="${voter_d.userId}"></h3>
+        <h3>_______________________________________________________________</h2>
+        <form  action="view_elections" method="post">
+            <input id ="view_ele" type = "hidden" value = "show">
+            <button id="view_elections" >All Elections</button>
+        </form>
+
+        <form action="/voter/candidate_view" method = "post">
+            <label for ="eid">Please enter the election id to check the candidate list:</label>
+            <input type="number" id = "eid" name = "eid">
+
+            <button type="submit" >check Candidates</button>
+        </form>
+
+        <form action="/voter/cast_vote" method="post">
+            <label for ="eid">Please enter the election id :</label>
+            <input type="number" id = "eid" name = "eid">
+            <label for ="cid">Please enter the candidate id :</label>
+            <input type="number" id = "cid" name = "cid">
+
+            <button type="submit" >Vote</button>
+        </form>
+        <button id = "logout" onclick="window.location.href = 'http://localhost:8080/'">Log-out</button>
+    </body>
+</html>
